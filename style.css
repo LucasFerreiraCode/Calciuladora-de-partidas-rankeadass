@@ -12,5 +12,14 @@ body, html {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    width: 50%;
+    width: 100%;
+    padding: 30px;
+    margin-bottom: 90px;
+}
+
+.text-resultado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
