@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Curso</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="text-resultado">
+        <h2 id="mensagem"></h2>
+    </div>
+
+    <script>
+
+        function calcularVitorias(vitorias, derrotas) {
+            //Calcula o saldo de vitórias
+            let calculo = vitorias - derrotas;
+            return calculo;
+        }
+
+        //solicita quantidade de vitórias e derrotas
+        let vitorias = parseInt(prompt("Digite aqui o número de Vitórias:"));
+        let derrotas = parseInt(prompt("Dgite aqui o número de derrotas"));
+
+        if (isNaN(vitorias) || (isNaN(derrotas) || vitorias < 0 || derrotas < 0)) {
+            alert("Insira os valores válidos de Vitórias e Derrotas")
+        }else{
+
+        let saldoRankeadas = calcularVitorias(vitorias, derrotas);
+        let nVitorias;
+
+        if (saldoRankeadas <= 10) {
+            nVitorias = "Ferro"
+        } else if (saldoRankeadas >= 11 && saldoRankeadas <= 20) {
+            nVitorias = "Bronze"
+        } else if (saldoRankeadas >= 21 && saldoRankeadas <= 50) {
+            nVitorias = "Prata"
+        } else if (saldoRankeadas >= 51 && saldoRankeadas <= 80) {
+            nVitorias = "Ouro"
+        } else if (saldoRankeadas >= 81 && saldoRankeadas <= 90) {
+            nVitorias = "Diamante"
+        } else if (saldoRankeadas >= 91 && saldoRankeadas <= 100) {
+            nVitorias = "Lendário"
+        } else if (saldoRankeadas >= 101) {
+            nVitorias = "Imortal"
+        }
+
+        console.log("O nível é: " + nVitorias)
+        document.getElementById("mensagem").innerHTML = "O Nível é: " + nVitorias;
+    }
+    </script>
+</body>
+
+</html>
